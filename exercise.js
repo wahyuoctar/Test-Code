@@ -64,6 +64,7 @@ function disemvowel(string) {
 
 
 // 2. Alphabet Value
+
 function letterValue(str){
     let alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newStr = str.split(""); //split string jadi array
@@ -82,6 +83,7 @@ console.log(letterValue("wahyu"));
 
 
 // 3. Odd Alphabet Value
+
 function oldLetterValue(str){
     let alphabet = "abcdefghijklmnopqrstuvwxyz";
     let newStr = str.split(""); //split string jadi array
@@ -102,6 +104,27 @@ function oldLetterValue(str){
 console.log(oldLetterValue("wahyu"));
 
 // 4. Unique Items
-const arr1 = [1, 3, 7, 4]
-const arr2 = [1, 5, 3, 7, 0]
+
+const array1 = [1, 3, 7, 4]
+const array2 = [1, 5, 3, 7, 0]
+
+
+const uniqueNumbers = (arr1 = [], arr2 = []) => {
+    for (let i = 0; i < arr1.length; i++) {
+      for (let j = 0; j < arr2.length; j++) {
+        if (arr2[j] == arr1[i]) {
+          arr2.splice(j, 1);
+          delete arr1[i];
+        }
+      }
+    }
+    let result = arr1.concat(arr2);
+    result = result.filter((val) => {
+      return val != undefined;
+    });
+    return result;
+  };
+  
+
+console.log(uniqueNumbers(array1, array2));
 
