@@ -42,7 +42,11 @@
 function disemvowel(string) {
 
     let vowels = {
-      'a': true, 'e': true, 'i': true, 'o': true, 'u': true
+      'a': true,
+      'e': true,
+      'i': true,
+      'o': true,
+      'u': true
     };
   
     let result = "";
@@ -52,8 +56,52 @@ function disemvowel(string) {
       if (!vowels[letter]) {
         result += string[i];
       }
-      return;
     };
+    return result;
   };
 
-  console.log(disemvowel(Wahyu));
+  console.log(disemvowel("Belajar Mengaji"));
+
+
+// 2. Alphabet Value
+function letterValue(str){
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let newStr = str.split(""); //split string jadi array
+    let valueAlpha = 0; //penampung hasil
+  //   console.log(alfabetIdx.indexOf("b"));
+    for (let i = 0; i < str.length; i++) {
+    valueAlpha += alphabet.indexOf(newStr[i]) + 1;
+    // maksudnya adalah, newStr adalah string baru yg sudah di split dari string yg ingin kita masukkan
+    // untuk newStr[i] berguna untuk mengecek value setiap pada index i
+    // sedangkan alfabet.indexOf(newStr[i]) adalah kita mencari nilai index newStr[i] pada alfabet
+  }
+  return valueAlpha;
+};
+
+console.log(letterValue("wahyu"));
+
+
+// 3. Odd Alphabet Value
+function oldLetterValue(str){
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let newStr = str.split(""); //split string jadi array
+    let result = 0; //penampung hasil
+    let alphaValue = 0
+  //   console.log(alfabetIdx.indexOf("b"));
+    for (let i = 0; i < str.length; i++) {
+    alphaValue = alphabet.indexOf(newStr[i]) + 1
+    if(alphaValue % 2 == 1){
+        result += alphabet.indexOf(newStr[i]) + 1;}
+    else if(alphaValue % 2 ==0){
+        result += 0
+    }
+  }
+  return result;
+};
+
+console.log(oldLetterValue("wahyu"));
+
+// 4. Unique Items
+const arr1 = [1, 3, 7, 4]
+const arr2 = [1, 5, 3, 7, 0]
+
