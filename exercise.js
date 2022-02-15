@@ -37,3 +37,23 @@
 // Diketahui ada 2 array of numbers, dimana 2 array tersebut memiliki beberapa
 // value/number yang sama. Tampilkan sebuah array baru yang berisi list value
 // dari kedua array tersebut, tetapi sudah
+
+// 1. Remove Vowels
+function disemvowel(string) {
+
+    let vowels = {
+      'a': true, 'e': true, 'i': true, 'o': true, 'u': true
+    };
+  
+    let result = "";
+  
+    for (let i = 0; i < string.length; i++) {
+      let letter = string[i].toLowerCase();
+      if (!vowels[letter]) {
+        result += string[i];
+      }
+      return;
+    };
+  };
+
+  console.log(disemvowel(Wahyu));
